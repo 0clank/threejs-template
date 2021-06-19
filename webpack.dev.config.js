@@ -29,7 +29,40 @@ module.exports = {
                     // Compiles Sass to CSS
                     "sass-loader",
                 ],
-            }
+            },
+            {
+                test: /\.(png|gif|jpe?g|svg)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            name: 'images/design/[name].[hash:6].[ext]',
+                            publicPath: '../',
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.(frag|vert|glsl)$/,
+                use: [
+                    {
+                        loader: 'glsl-shader-loader',
+                        options: {}
+                    }
+                ]
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            name: 'fonts/[name].[hash:6].[ext]',
+                            publicPath: '../',
+                        },
+                    },
+                ],
+            },
         ],
     },
     resolve: {
@@ -48,7 +81,7 @@ module.exports = {
             cleanOnceBeforeBuildPatterns: ['**/*'],
         }),
         new HTMLWebpackPlugin({
-            inject: true,
+            inject: 'body',
             hash: false,
             filename: 'index.html',
             template: path.resolve(__dirname, 'src', 'index.html'),
