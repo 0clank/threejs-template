@@ -12,6 +12,7 @@ export class World {
     private _renderer: WebGLRenderer;
     private _scene: Scene;
     private _camera: PerspectiveCamera;
+    private _canvas: HTMLCanvasElement;
 
     private _entities: Map<string, Entity>;
 
@@ -21,10 +22,12 @@ export class World {
         // Creating Map
         this._entities = new Map<string, Entity>( );
 
+        // Canvas
+        this._canvas = <HTMLCanvasElement> document.getElementById( 'threejs-canvas' );
+
         // Creating default objects
         this._renderer = new WebGLRenderer( {
-            // @ts-ignore
-            canvas: document.getElementById( 'threejs-canvas' )
+            canvas: this._canvas
         } );
         this._renderer.setSize( window.innerWidth, window.innerHeight );
 
