@@ -1,0 +1,9 @@
+# IntelliJ
+.idea/*
+*.iml
+
+# Npm
+node_modules/*
+
+# Dist
+dist
