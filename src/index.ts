@@ -1,8 +1,8 @@
 import './style.scss';
 
-import { World }      from './core/world';
-import { CubeEntity } from './entity/cubeEntity';
-import { TestEntity } from './entity/testEntity';
+import { World }      from './core/World';
+import { CubeEntity } from './entity/CubeEntity';
+import { TestEntity } from './entity/TestEntity';
 
 /**
  * Entry point of the application

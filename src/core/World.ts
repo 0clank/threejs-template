@@ -4,8 +4,8 @@ import {
     Scene,
     WebGLRenderer,
 }                   from 'three';
-import { Entity }   from './entity';
-import { Entity3D } from './entity3d';
+import { Entity }   from './Entity';
+import { Entity3d } from './Entity3d';
 
 export class World {
 
@@ -70,9 +70,9 @@ export class World {
         entity.world = this;
         this._entities.set( entity.name, entity );
 
-        if ( ( entity as Entity3D ).object3D ) {
+        if ( ( entity as Entity3d ).object3D ) {
 
-            this._scene.add( ( entity as Entity3D ).object3D );
+            this._scene.add( ( entity as Entity3d ).object3D );
 
         }
 

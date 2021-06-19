@@ -1,8 +1,8 @@
 import { Entity }   from './Entity';
 import { Object3D } from 'three';
-import { World }    from './world';
+import { World }    from './World';
 
-export class Entity3D extends Entity {
+export class Entity3d extends Entity {
 
     private _object3D: Object3D;
 

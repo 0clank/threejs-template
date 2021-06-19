@@ -1,7 +1,7 @@
-import { Entity3D }                             from '../core/entity3d';
+import { Entity3d }                             from '../core/Entity3d';
 import { BoxGeometry, Mesh, MeshBasicMaterial } from 'three';
 
-export class CubeEntity extends Entity3D
+export class CubeEntity extends Entity3d
 {
 
     private cube!: Mesh;

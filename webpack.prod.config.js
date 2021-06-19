@@ -6,11 +6,16 @@ const path = require('path');
 module.exports = {
     entry: './src/index.ts',
     devtool: 'inline-source-map',
-    mode: 'development',
+    mode: 'production',
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
         port: 9000,
+    },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
     },
     module: {
         rules: [
@@ -81,7 +86,7 @@ module.exports = {
             cleanOnceBeforeBuildPatterns: ['**/*'],
         }),
         new HTMLWebpackPlugin({
-            inject: true,
+            inject: 'body',
             hash: false,
             filename: 'index.html',
             template: path.resolve(__dirname, 'src', 'index.html'),
