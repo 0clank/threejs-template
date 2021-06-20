@@ -83,6 +83,13 @@ export class World {
     public removeEntity( entity: Entity ): void {
 
         this._entities.delete( entity.name );
+
+        if ( ( entity as Entity3d ).object3D ) {
+
+            this._scene.remove( ( entity as Entity3d ).object3D );
+
+        }
+
         entity.end( );
 
     }

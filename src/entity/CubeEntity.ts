@@ -43,4 +43,5 @@ export class CubeEntity extends Entity3d
         this.cube.geometry.dispose( );
 
     }
+
 }
