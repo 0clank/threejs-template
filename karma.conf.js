@@ -4,10 +4,10 @@ module.exports = function (config) {
     config.set({
         basePath: '',
         frameworks: ['jasmine'],
-        files: ['spec/*.spec.ts'],
+        files: ['spec/**/*.spec.ts'],
         mime: { 'text/x-typescript': ['ts','tsx'] },
         preprocessors: {
-            'spec/*.spec.ts': ['webpack', 'sourcemap'],
+            'spec/**/*.spec.ts': ['webpack', 'sourcemap'],
         },
         webpack: {
             resolve: {
